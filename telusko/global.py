@@ -1,3 +1,5 @@
+"""GLOBAL KEYWORDS IN PYTHON"""
+
 a=10
 
 def func():
