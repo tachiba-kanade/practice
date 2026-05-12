@@ -20,8 +20,6 @@ list comprehension
 
 """
 
-
-
 #1. While Loop - it's conditional
 i = 0
 while i < 5:

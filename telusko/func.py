@@ -151,3 +151,69 @@ def person(**data):
 
 
 person(name='sudha', age=25, state='odisha', job='python developer', pincode=751030) # here we are passing 4 arguments to the function person but we have not defined any parameters in the function person. so we can use **kwargs to handle this situation.
+
+"""PASS LIST TO A FUNCTION
+count even and odd numbers in a list"""
+
+def count(lst):
+
+    even = 0
+    odd = 0 
+    for i in lst:
+            if i%2==0:
+                even = even + 1
+            else:
+                odd = odd + 1  
+    return even, odd
+
+lst = [3,5,6,50,67,80,23,45,67,90,22]
+even, odd = count(lst)
+print(f"Even: {even} and odd: {odd}")
+
+
+"""FIBONACCI SEQUENCE"""
+
+def fibonacci(n):
+    a=0
+    b=1
+    print(a)
+    print(b)
+    for i in range(2,n):
+        c=a+b
+        a=b
+        b=c
+        print(c)
+
+n = int(input("Enter the number you want to go: "))
+fibonacci(n)
+
+
+"""Factorial of a number
+
+    Iterative / Normal Loop Version
+    Instead of breaking the problem into smaller factorials,
+    it directly multiplies numbers one by one.
+
+    f = 1
+
+    f = 1 * 1 = 1
+    f = 1 * 2 = 2
+    f = 2 * 3 = 6
+    f = 6 * 4 = 24
+    f = 24 * 5 = 120
+
+    Uses constant memory
+    Iterative
+
+    Only keeps: f and i
+    Much less memory.
+"""
+
+def factorial(n):
+    f=1
+    for i in range(1,n+1):
+        f= f*i
+        print(f)
+
+n = int(input("Enter the number: "))
+factorial(n)
