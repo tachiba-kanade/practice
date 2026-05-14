@@ -1,9 +1,5 @@
 """ FUNCTIONS """
 
-
-from ast import arguments
-
-
 def greet():
     print("Hellow")
     print("Welcome to Python")
@@ -43,7 +39,6 @@ function_name()
 
 """
 
-
 def update(x):# here x is a taking a different memory of a 
     x=8 # this will not change the value of x in the main function because x is immutable
     print("x =", x)
@@ -74,9 +69,6 @@ NOT THE VALUE OF THE OBJECT. SO ANY CHANGES MADE TO THE OBJECT INSIDE THE FUNCTI
 WILL AFFECT THE ORIGINAL OBJECT OUTSIDE THE FUNCTION, 
 REGARDLESS OF WHETHER THE OBJECT IS MUTABLE OR IMMUTABLE """
 
-
-
-
 def update(lst):
     print(id(lst)) # this will print the memory address of the list lst
     lst[1]=7
@@ -91,7 +83,7 @@ update(lst) # when we pass the list lst to the function update, we are passing t
 # 4377187648
 # [1, 7, 3]
 
-""" TYPES OF ARGUMENTS : formal and acual
+""" TYPES OF ARGUMENTS : formal and actual
 under actual there are 4 types of arguments :
     Positional arguments
     Keyword arguments
