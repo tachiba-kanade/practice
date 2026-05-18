@@ -45,3 +45,17 @@ from matplotlib.pylab import f
 
 # greet() # calling the function
 
+# def print_list(lst):
+    
+#     for i in lst:
+#         return i # loop stops after return 
+    
+# lst = [5,6,7,8]
+# print(print_list(lst))
+
+from random import randint
+def arr_ran(x):
+    c = randint(0,9)
+    print(c)
+
+arr_ran(7)

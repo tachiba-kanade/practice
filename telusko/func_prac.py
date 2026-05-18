@@ -130,16 +130,64 @@ print("Season is :", season)
 """(\(y = mx + b\)), where \(m\) is the slope. 
 Alternatively, use the formula \(m = \frac{y_2 - y_1}{x_2 - x_1}\) with two points \((x_1, y_1)\) and \((x_2, y_2)\) on the line"""
 
-def cal_slope():
+def calculate_slope(equation):
+    equation = equation.replace(" ", "")
+    right_side = equation.split("=")[1]
+    slope = right_side.split("x")[0]
+
+    if slope == "":
+        return 1
+    elif slope == "-":
+        return -1
+    else:
+        return int(slope)
+
+user = input("Enter equation: ")
+print("Slope is:", calculate_slope(user))
+
+
+# 7. Quadratic equation is calculated as follows: ax² + bx + c = 0. Write a function which calculates solution set of a quadratic equation, solve_quadratic_eqn.
+
+import math
+
+def solve_quadratic_eqn(a, b, c):
     pass
 
-user = input("Enter the linear equation in the form y = mx + b: ")
-slope = cal_slope(user)
+print(solve_quadratic_eqn(1, -3, 2))
+
+# 8. Declare a function named print_list. It takes a list as a parameter and it prints out each element of the list.
 
 
+def print_list(lst):
+    
+    for i in lst:
+        print(i) 
+    
+lst = [5,6,7,8]
+
+# 9. Declare a function named reverse_list. It takes an array as a parameter and it returns the reverse of the array (use loops).
+# print(reverse_list([1, 2, 3, 4, 5]))
+# [5, 4, 3, 2, 1]
+# print(reverse_list(["A", "B", "C"])) 
+# ["C", "B", "A"]
+
+# can use reverse(), ill be using start stop the number of the step to go range(start, stop, step) tart from the last index -1 → stop before -1-1 → move backwards by 1
+def reverse_list(arr):
+    reversed_arr = []
+    for i in arr[-1,-1,-1]:
+        reversed_arr.append(arr[i])
+
+    return reversed_arr
+
+print(reverse_list([3,4,5,5,6,7,7,8]))
+print(reverse_list(['A','B','c']))
+
+# 10. Declare a function named capitalize_list_items. It takes a list as a parameter and it returns a capitalized list of items
+# here we can use .capitalised(), title()
+def capitalize_list_items(lst):
+    capitalised_list = [item.title() for item in lst]
+    return capitalised_list
 
 
-
-
-
-
+lst = input("Enter the list of items")
+print(capitalize_list_items())
