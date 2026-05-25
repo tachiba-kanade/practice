@@ -191,3 +191,4 @@ def capitalize_list_items(lst):
 
 lst = input("Enter the list of items")
 print(capitalize_list_items())
+

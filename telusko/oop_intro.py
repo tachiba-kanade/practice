@@ -16,8 +16,6 @@ so as telsuko said - manifactureres arent imp but the place it is designed is - 
 class is design (blueprint)
 object is the instance (factory the real stuff)
 
-
-
 """
 
 class Computer:
@@ -76,4 +74,94 @@ The logic in creating Classes and its objects are similar to how we work with fu
         ed.shout()
         dan.shout()
 
+"""
+
+
+# __init__ special method initialise variable. kind of contructor and it is called for every object
+
+# def __init__(self, *args, **kwargs):
+#     print("in init")
+
+class Computer :
+    
+    def __init__(self, cpu, ram): #now here 3 args are passing (com1,i5,16) com1 passed automatically,
+        #now cpu and ram are just vars/args
+        print("in init") # will be printed for every object
+        self.cpu = cpu
+        self.ram =ram
+
+        # now each object will have will have its own cpu and own ram - for both com1 and com2
+    def config(self):
+        # print("i5, 16 GB RAM, 1 TB")
+        print("config", self.cpu, self.ram)
+
+com1 = Computer('i5', 16) #passing 2 variables/ args
+com2 = Computer('Ryzen 3', 8 )
+
+com1.cpu = "" # we can change from 1 object to different object
+
+com1.config()
+# Computer.config(com1) - another way to call throigh object
+
+
+"""
+CONSTRUCTOR AND SELF
+
+Every time you create an object it will take different memory space(we have heap memory)
+the size of the object depends on types of variables number of variables
+and who allocates the size of the object - contructor
+
+"""
+
+class Computer:
+
+    def __int__(self):
+        self.name = "Sudha"
+        self.age = 25
+
+    def update(self):
+        self.age = 30
+
+    def compare(self, other): #here self is c1 and other is c2 can be other way around c1 is callling c2
+        # the one who is calling it and whom to compare
+        if self.age == other.age:
+            return True
+        else:
+            return False
+
+    
+c1 = Computer()
+c2 = Computer()
+
+#how to compare
+
+if c1.compare(c2):
+    print("they are the same")
+
+c1.update()
+
+"""TYPE OF VARIABLES
+1. Instance variable
+2. class variable (static variable)
+
+"""
+
+#namespace - where you store all instance varibales and class varibales
+class Car:
+    wheels = 4 #this is a class variable, common for all objects you can use object name and car name
+    def __init__(self):
+        self.comp= "bmv"
+        self.mil= 23.5
+        self.eng = "vols"       
+# 2 different objects and different varibles these are called instance varibales, they changes according to the object
+
+c1=Car()
+c2 = Car()
+
+print(c1.com, c1.mil, c1.wheels)
+
+"""TYPES OF METHOD
+INSTANCE TYPES - ACCESSOR AND MUTATORS
+CLASS
+STATIC
 """

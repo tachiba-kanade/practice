@@ -1,0 +1,30 @@
+1. Coin Flip Simulator
+Simulate 10,000 coin flips and plot the distribution of outcomes.
+Then extend it, what is the probability of getting more than 5,200 heads in 10,000 flips?
+Solve it analytically using the central limit theorem then verify with your simulation.
+One project. Probability, simulation, and the relationship between theory and computation, three things quant firms test directly.
+
+2. Dice Probability Calculator
+Build a function that calculates the probability of any outcome when rolling any number of fair dice.
+Extend it to biased dice.
+Then solve a classic interview problem, what is the expected number ot rolls to see all six faces of a fair die?
+A direct interview preparation tool dressed up as a coding exercise.
+
+3. Simple Moving Average Strategy
+Download price data for one asset using yfinance.
+Calculate a short and long moving average.
+Go long when the short crosses above the long. Exit when it crosses
+Calculate the Sharpe ratio.
+The strategy does not need to be profitable. Understanding what you are measuring is the point.
+
+4. Monte Carlo Retirement Calculator
+Simulate 10,000 portfolio paths over 30 years using random annual returns.
+Plot the distribution of final values.
+Calculate the probability of running out of money before year 30.
+Quant thinking applied to a problem everyone understands, uniquely easy to explain in any interview.
+
+5. Correlation Matrix Visualiser
+Download price data for 10 stocks across different sectors.
+Calculate the correlation matrix of daily returns and plot it as a heatmap.
+Then ask, which stocks are most correlated? What does that mean for a portfolio holding all of them?
+Two hours to build. Teaches the foundation of portfolio risk management.
