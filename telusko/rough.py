@@ -53,9 +53,34 @@ from matplotlib.pylab import f
 # lst = [5,6,7,8]
 # print(print_list(lst))
 
-from random import randint
-def arr_ran(x):
-    c = randint(0,9)
-    print(c)
+# from random import randint
+# def arr_ran(x):
+#     c = randint(0,9)
+#     print(c)
 
-arr_ran(7)
+# arr_ran(7)
+
+# def add(a, *b):
+    
+#     print(type(a),type(b))
+
+# add(5, 6, 7, 8)
+
+
+# tup = (4,6)
+# a,b = tup
+# print(a,b)
+# print(tup,type(tup))
+
+
+# swapping 2 values using XOR
+a = 9
+b = 7
+print(a,b)
+a = a^b # 9 ^ 7
+b = a^b # (9 ^ 7) ^7 = 9
+a = a^b # (9 ^ 7) ^9 = 7
+print(a,b)
+
+
+

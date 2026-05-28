@@ -161,7 +161,113 @@ c2 = Car()
 print(c1.com, c1.mil, c1.wheels)
 
 """TYPES OF METHOD
-INSTANCE TYPES - ACCESSOR AND MUTATORS
-CLASS
-STATIC
+
+1. INSTANCE TYPES - ACCESSOR AND MUTATORS
+2. CLASS
+3. STATIC
+
 """
+
+class Student:
+
+    school = "Telusko"
+
+    def __init__(self,m1,m2,m3):
+        self.m1 = m1
+        self.m2 = m2
+        self.m3 = m3
+
+    #INSTANCE METHOD cause we are passing self meaning it belongs to a particular object, so it works with the object(with self keyword)
+    # now its 2 types = Accesors and mutators
+    def avg(self):
+        return (self.m1+self.m2+self.m3)/3
+    
+    def get_m1(self):
+        return self.m1
+    def set_m1(self, value):
+        self.m1 = value
+        
+    #CLASS METHOD - to work with class variables(work with class keywords)
+
+    @classmethod #decorators
+
+    def info(cls):
+        return cls.school
+    # STATIC METHOD nothing to vars or class or instance, 
+
+    @staticmethod
+    def get_school_name():
+        print("this is student class in abc module")
+
+s1 = Student(34, 67, 33)
+s2 = Student(45, 56, 89)
+
+#so for calling avg we have to call it like this
+s1.avg()
+s2.avg()
+
+print(Student.info())
+
+print(Student.get_school_name())
+
+# we cant say Student.avg() as we are not using object there
+
+""" INNER CLASS """
+
+class Student:
+
+    def __init__(self, name, rollno):
+        self.name = name
+        self.rollno = rollno
+    
+    def show(self):
+        print(self.name, self.rollno)
+
+
+
+s1 = Student('Babushka', 67)
+s2 = Student( 'Bubu', 69)
+
+s1.show()
+
+
+"""so now i need a details of laptops where the values are just stored or pre-defined maybe 
+either i create a class outside or for betterment i creat a class inside"""
+
+class Student:
+
+    def __init__(self, name, rollno):
+        self.name = name
+        self.rollno = rollno
+        self.lap = self.Laptop() # created an object of innerclass and can directly this
+    
+    def show(self):
+        print(self.name, self.rollno, self.lap.show())
+
+    class Laptop:
+
+        def __init__(self):
+            self.brand = "Apple"
+            self.model = "M4 Air"
+            self.gb = "16gb"
+        
+        def show(self):
+            print("Heres the config: ", self.brand, self.model, self.gb)
+
+
+
+s1 = Student('Babushka', 67)
+s2 = Student( 'Bubu', 69)
+
+# theres 2 ways i access the laptop class
+# 1. create an object of the inner class inside the outer class
+# 2. create the object outside the outerclass but with reference to the outerclass
+
+s1.show()
+print(s1.name, s1.rollno, s1.lap) # the object is created inside 
+
+lap1 = Student.Laptop()
+lap2 = Student.Laptop() #obj created outside with refernce to outerclass
+
+
+""" """
