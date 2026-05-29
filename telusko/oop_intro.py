@@ -269,5 +269,3 @@ print(s1.name, s1.rollno, s1.lap) # the object is created inside
 lap1 = Student.Laptop()
 lap2 = Student.Laptop() #obj created outside with refernce to outerclass
 
-
-""" """
