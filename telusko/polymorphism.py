@@ -46,7 +46,7 @@ lap1.code(ide)
 
 
 
-""" Operator Overloading """
+""" OVERLOADING """
 
 a = 7
 b = 8 
@@ -76,7 +76,8 @@ class Student:
             return False
         
     def __str__(self):
-        return self.m1, self.m2
+        return '{}{}'.format(self.m1, self.m2) # we convert it to string now by changing the format
+
 
 s1 = Student(34, 66)
 s2 = Student(45, 55)
@@ -90,11 +91,27 @@ if s1 > s2 :  # so if you want to perform any operations on the objects, you hav
 else:
     print("s2 wins")
 
-
-
 print(s1) # unlike a = 9 printing values object print address calls __str__ module address so here over riding the method works
 print(s1.__str__())
 # so now s1 will give tupless(value) as method is defined
-#
+# operators same but operand different thats overloading, same method name but args are diff
+ 
+
+"""OVERIDDING"""
+
+class A:
+
+    def show(self):
+        print("in A show")
+class B(A):
+    
+    def show(self):
+        print("in B show") # now it will print this not a one. thats overidding
+
+a1 = B()
+a1.show() # in A show. It inherited as it didnt have its own show()
+
+
+
 
 
