@@ -50,3 +50,44 @@ Display the result.
 
 from datetime import datetime
 
+from datetime import datetime
+
+def get_dob():
+    return input("Enter DOB (dd/mm/yyyy): ")
+
+def calculate_age(dob):
+    birth_date = datetime.strptime(dob, "%d/%m/%Y")
+    current_date = datetime.now()
+
+    difference = current_date - birth_date
+
+    days = difference.days
+
+    years = days // 365
+    months = (days % 365) // 30
+    remaining_days = (days % 365) % 30
+
+    hours = difference.total_seconds() // 3600
+    minutes = difference.total_seconds() // 60
+    seconds = difference.total_seconds()
+    milliseconds = difference.total_seconds() * 1000
+
+    return years, months, remaining_days, hours, minutes, seconds, milliseconds
+
+def display_age(age):
+    years, months, days, hours, minutes, seconds, milliseconds = age
+
+    print(f"\nAge:")
+    print(f"{years} years {months} months {days} days")
+    print(f"{int(hours)} hours")
+    print(f"{int(minutes)} minutes")
+    print(f"{int(seconds)} seconds")
+    print(f"{int(milliseconds)} milliseconds")
+
+dob = get_dob()
+
+if dob:
+    age = calculate_age(dob)
+    display_age(age)
+else:
+    print("Invalid Input")
