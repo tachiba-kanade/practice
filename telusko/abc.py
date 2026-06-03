@@ -5,6 +5,7 @@ you can't create the object of abstract
 
 """
 from abc import ABC, abstractmethod
+from multiprocessing import process
 
 class Computer(ABC):
 
@@ -13,6 +14,25 @@ class Computer(ABC):
     def process(self):
         pass
 
-com1 = Computer() #TypeError: Can't instantiate abstract class Computer with abstract method process
-com1.process()
+class Laptop(Computer):
+
+    # pass
+
+    def process(self):
+        print("it is running")
+
+class Programmer:
+
+    def work(self, com):
+        print("solving bugs")
+        com.process()
+
+# com = Computer() #TypeError: Can't instantiate abstract class Computer with abstract method process
+# com.process()
+
+com1 = Laptop() #TypeError: Can't instantiate abstract class Laptop with abstract method process as there is no method of laptop on it own
+
+
+prog1 = Programmer()
+prog1.work(com1)
 
