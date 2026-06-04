@@ -41,3 +41,18 @@ for i in values:
 
 
 """GENERATORS - Those give you iterators"""
+
+def topten():
+
+    n=1
+
+    while n<=10:
+        sq = n*n
+        yield sq
+        n +=1
+
+values = topten()
+for i in values:
+    print(i)
+
+# now why need this we can use the return? when you return a 10000 of records it loads your memory up, you wany to work 1 at a time - fetch 1 by 1
