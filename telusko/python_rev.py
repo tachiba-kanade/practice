@@ -385,9 +385,52 @@ print("Common Friends:", common_friends)
 
 Easy: Create a dictionary for a student with name, age, and marks.
 Medium: Update marks and add a new subject.
-Hard: Build a mini phonebook using dictionaries.
+Hard: Build a mini phonebook using dictionaries."""
 
-9. Python Path / Help
+student = {
+    "name": "Sudha",
+    "age": 25,
+    "marks": 88
+}
+
+print(student)
+
+
+student = {
+    "name": "Sudha",
+    "age": 25,
+    "marks": 88
+}
+
+# Update marks
+student["marks"] = 92
+
+# Add a new subject
+student["subject"] = "Python"
+
+print(student)
+
+
+phonebook = {
+    "Alice": "9876543210",
+    "Bob": "8765432109",
+    "Charlie": "7654321098"
+}
+
+# Display all contacts
+print("Phonebook:")
+for name, number in phonebook.items():
+    print(name, ":", number)
+
+# Search for a contact
+search_name = "Bob"
+
+if search_name in phonebook:
+    print("\nPhone Number:", phonebook[search_name])
+else:
+    print("\nContact not found")
+
+"""9. Python Path / Help
 
 Easy: Use help(print) in Python shell.
 Medium: Find where Python is installed on your system.
