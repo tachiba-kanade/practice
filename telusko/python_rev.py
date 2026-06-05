@@ -340,13 +340,46 @@ m1.show_menu()
 
 Easy: Create a tuple of coordinates (x, y).
 Medium: Explain why tuples are immutable with an example.
-Hard: Store RGB color values in tuples and print color names.
+Hard: Store RGB color values in tuples and print color names."""
 
-7. Set
+
+cor = (10, 34)
+
+numbers = (1, 2, 3)
+numbers[0] = 10 #TypeError: 'tuple' object does not support item assignment
+
+colors = {
+    "Red": (255, 0, 0),
+    "Green": (0, 255, 0),
+    "Blue": (0, 0, 255),
+    "Yellow": (255, 255, 0)
+}
+
+for color_name, rgb in colors.items():
+    print(f"{color_name}: RGB = {rgb}")
+
+
+"""7. Set
 
 Easy: Create a set of unique numbers.
 Medium: Remove duplicate values from a list using a set.
 Hard: Make a “common friends finder” using two sets.
+
+"""
+numbers = {1, 2, 3, 4, 5}
+print(numbers)
+
+numbers = [1, 2, 3, 2, 4, 1, 5, 3]
+unique_numbers = list(set(numbers))
+print(unique_numbers)
+
+friends_a = {"Alice", "Bob", "Charlie", "David"}
+friends_b = {"Charlie", "David", "Emma", "Frank"}
+
+common_friends = friends_a.intersection(friends_b)
+
+print("Common Friends:", common_friends)
+"""
 
 8. Dictionary
 
