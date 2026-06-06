@@ -274,67 +274,58 @@ print(lst)
 
 #medium
 class Menu:
+
+
     def __init__(self):
-        self.numbers = []
+        self.nums = input('ENTER THE LIST OF NUMBERS TO OPERATE ON: ').split(',')
+        self.show_menu() 
 
-    def add(self):
-        count = int(input("How many numbers do you want to add? "))
+    def add(nums):
+        for i in range in nums:
+            i=+i
+        print("result: ", i)
 
-        for i in range(count):
-            num = int(input(f"Enter number {i + 1}: "))
-            self.numbers.append(num)
+    def remove(nums):
+        lst =[]
+        lst = input("enter the numbers you want to remove , separted:").split(',')
 
-        print("Numbers added successfully!")
-        print("Current list:", self.numbers)
 
-    def sort(self):
-        self.numbers.sort()
-        print("Sorted list:", self.numbers)
+    def sort():
+        pass
 
-    def remove(self):
-        num = int(input("Enter the number you want to remove: "))
+    def show_menu():
+        
+        while True(): 
+            print("\n=== MAIN MENU ===")
+            print("1. ADD")
+            print("2. REMOVE")
+            print("3. SORT")
+            print("4. EXIT")
 
-        if num in self.numbers:
-            self.numbers.remove(num)
-            print(f"{num} removed successfully!")
-        else:
-            print(f"{num} is not in the list.")
+            choice = input("Enter your choice (1-4): ")
 
-        print("Current list:", self.numbers)
+            if choice =='1':
+                add()
 
-    def show_menu(self):
-        while True:
-            print("\n===== MENU =====")
-            print("1. Add")
-            print("2. Sort")
-            print("3. Remove")
-            print("4. Show ")
-            print("5. Exit")
+            elif choice =='2':
+                remove()
 
-            choice = input("Enter your choice: ")
+            elif choice == '3':
+                sort()
 
-            if choice == "1":
-                self.add()
-
-            elif choice == "2":
-                self.sort()
-
-            elif choice == "3":
-                self.remove()
-
-            elif choice == "4":
-                print("Current list:", self.numbers)
-
-            elif choice == "5":
-                print("byeeeeeeeeeeee")
+            elif choice == '4':
+                print("YOU EXITED DON'T COME BACK")
                 break
-
             else:
-                print("Invalid.")
+                print("UH OHH, WRONG CHOICE BITCH, TRY AGAIN")
 
+        
 
 m1 = Menu()
 m1.show_menu()
+
+
+#hard
 
 """6. Tuple
 
