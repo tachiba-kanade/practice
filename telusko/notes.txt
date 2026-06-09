@@ -1,0 +1,12 @@
+Python is both compiled and interpreted language
+
+
+c and c++ are compiler language - high level language --> convert that code to machine code (compile)
+
+so when we write a python code --> it first gets compiled ---> to byte code --> interpreted to machine language (instructions to executing line by line)
+
+why so complex ? 
+we use byte code to achive portability (platform independence - write once and use it in any machine) -pvm 
+
+cpython, pypy, ironpython, jython
+
