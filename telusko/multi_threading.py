@@ -26,12 +26,11 @@ class Hii(Thread):
             sleep(1) #now it will print alternate
 
 t1 = Hello()
-
 t2 = Hii()
 
 # t1.run()
 t1.start()
-sleep(0.2)
+sleep(0.2) # give a break to avoid colilsion
 # t2.run()
 t2.start()
 
