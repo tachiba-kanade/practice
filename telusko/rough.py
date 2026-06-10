@@ -82,47 +82,125 @@ from matplotlib.pylab import f
 # a = a^b # (9 ^ 7) ^9 = 7
 # print(a,b)
 
-class Student:
+# class Student:
 
-    def __init__(self, m1, m2):
-        self.m1 = m1
-        self.m2 = m2
+#     def __init__(self, m1, m2):
+#         self.m1 = m1
+#         self.m2 = m2
 
-    def __add__(self, other):
-        m1 = self.m1 + other.m1
-        m2 = self.m2 + other.m2
-        s3 = Student(m1,m2)
+#     def __add__(self, other):
+#         m1 = self.m1 + other.m1
+#         m2 = self.m2 + other.m2
+#         s3 = Student(m1,m2)
 
-        return s3
+#         return s3
        
-    def __gt__(self, other):
-        r1 = self.m1 + self.m2
-        r2 = other.m1 + other.m2
+#     def __gt__(self, other):
+#         r1 = self.m1 + self.m2
+#         r2 = other.m1 + other.m2
 
-        if r1 > r2:
-            return True
-        else:
-            return False
+#         if r1 > r2:
+#             return True
+#         else:
+#             return False
         
-    def __str__(self):
-        return self.m1, self.m2
+#     def __str__(self):
+#         return self.m1, self.m2
 
-s1 = Student(34, 66)
-s2 = Student(45, 55)
+# s1 = Student(34, 66)
+# s2 = Student(45, 55)
 
-s3 = s1+s2 #TypeError: unsupported operand type(s) for +: 'Student' and 'Student'
-print(s3.m1)
-# as the compiler doesnt know what to do
+# s3 = s1+s2 #TypeError: unsupported operand type(s) for +: 'Student' and 'Student'
+# print(s3.m1)
+# # as the compiler doesnt know what to do
 
-if s1 > s2 :  # so if you want to perform any operations on the objects, you have define all these methods
-    print("s1 wins")
-else:
-    print("s2 wins")
+# if s1 > s2 :  # so if you want to perform any operations on the objects, you have define all these methods
+#     print("s1 wins")
+# else:
+#     print("s2 wins")
 
 
 
-print(s1) #: __str__ returned non-string (type tuple)
+# print(s1) #: __str__ returned non-string (type tuple)
 # unlike a = 9 printing values object print address calls __str__ module address so here over riding the method works
 # print(s1.__str__())
 # so now s1 will give tupless(value) as method is defined
 #
+
+# class Menu:
+
+#     def __init__(self):
+#         self.nums = input('ENTER THE LIST OF NUMBERS TO OPERATE ON: ').split(',')
+#         self.show_menu() 
+
+#     def add(nums):
+#         for i in range in nums:
+#             i=+i
+#         print("result: ", i)
+
+#     def remove(nums):
+#         lst =[]
+#         lst = input("enter the numbers you want to remove , separted:").split(',')
+
+
+#     def sort():
+#         pass
+
+#     def show_menu():
+        
+#         while True(): 
+#             print("\n=== MAIN MENU ===")
+#             print("1. ADD")
+#             print("2. REMOVE")
+#             print("3. SORT")
+#             print("4. EXIT")
+
+#             choice = input("Enter your choice (1-4): ")
+
+#             if choice =='1':
+#                 add()
+
+#             elif choice =='2':
+#                 remove()
+
+#             elif choice == '3':
+#                 sort()
+
+#             elif choice == '4':
+#                 print("YOU EXITED DON'T COME BACK")
+#                 break
+#             else:
+#                 print("UH OHH, WRONG CHOICE BITCH, TRY AGAIN")
+
+        
+
+# m1 = Menu()
+# m1.show_menu()
+
+
+def min_calc():
+
+    user_input = int(input("Enter the minutues to be converted: "))
+    
+    if user_input < 0:
+        print("try again, wrong input")
+    
+    hours = 0
+    mins = 0
+    day = 0
+
+
+    if user_input > 1440:
+        day = user_input // 1440
+        hours = (user_input % 1440)//60
+        mins = hours % 60 
+
+
+    total_seconds = user_input * 60
+
+    print("days:", day)
+    print("hours:", hours)
+    print("mins", mins)
+    print("total seconds", total_seconds)
+
+min_calc()

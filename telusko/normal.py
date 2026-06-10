@@ -50,6 +50,16 @@ Display the result.
 
 from datetime import *
 
+def leap(year):
+    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
+
+def days_in_month(month, year):
+    if month == 2:
+        return 29 if leap(year) else 28
+
+    if month in [4, 6, 9, 11]:
+        return 30
+    return 31
     
 def cal_dob():
     dob = input( "Enter the DOB in format dd/mm/yyyy: ").split('/')
@@ -62,18 +72,30 @@ def cal_dob():
     current_month = now.month
     current_year = now.year
 
+    if current_day < dob_day:
+        current_month -= 1
+
+        if current_month == 0:
+            current_month = 12
+            current_year -= 1
+
+        current_day += days_in_month(current_month, current_year)
+
+    diff_day = current_day - dob_day
+
+    # Borrow months if needed
+    if current_month < dob_month:
+        current_month += 12
+        current_year -= 1
+
+    diff_month = current_month - dob_month
+
     diff_year = current_year - dob_year 
-    if current_month - dob_month>0:
-        diff_month = current_month - dob_month
-    else:
-        diff_month=+12
-    
-    if current_day - dob_day>0:
-        diff_day = current_day - dob_day
-    else:
-        diff_day=+30
+
 
     print(f"current_age is: {diff_day}/{diff_month}/{diff_year}")
+
+    
     
 
 cal_dob()
@@ -112,8 +134,9 @@ Use strptime() to convert the DOB string into a datetime object.
 Use current date and time.
 Use conditions to check if the DOB is in the future.
 Display proper error messages for invalid input.
-Question 2: Time Converter
+-----------------------------------------------------------------------------------------
 
+Question 2: Time Converter
 Write a Python program that takes total minutes as input and converts it into:
 
 Days
@@ -122,7 +145,6 @@ Minutes
 Seconds
 
 Example:
-
 Input: 1500
 
 Output:
@@ -134,8 +156,37 @@ Requirements:
 Use a function.
 Use floor division //.
 Use modulus %.
-Reject negative input using conditions.
-Question 3: Simple Interest Calculator
+Reject negative input using conditions."""
+
+def min_calc():
+
+    user_input = input("Enter the minutues to be converted")
+    
+    if user_input < 0:
+        print("try again, wrong input")
+
+
+    if user_input > 1440:
+
+        day = user_input // 1440
+        mins = user_input % 1440
+        if mins > 60:
+            hours = mins//60
+            remaining_mins = mins%60
+
+    total_seconds = user_input * 60
+
+    print("days:", day)
+    print("hours:", hours)
+    print("mins", mins)
+    print("total seconds", total_seconds)
+
+min_calc()
+
+
+
+
+"""Question 3: Simple Interest Calculator
 
 Write a Python program that takes:
 

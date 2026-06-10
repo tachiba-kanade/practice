@@ -9,3 +9,5 @@ square = lambda x: x*x
 # here we are creating a lambda function and assigning it to the variable square. so we can call the lambda function using the variable name square.
 #pass any number of arguments  but it should be of  expression 
 
+
+
