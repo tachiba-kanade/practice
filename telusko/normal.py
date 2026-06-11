@@ -184,8 +184,6 @@ def min_calc():
 min_calc()
 
 
-
-
 """Question 3: Simple Interest Calculator
 
 Write a Python program that takes:
@@ -212,8 +210,32 @@ Requirements:
 
 Use a function named calculate_interest.
 Use conditions to reject negative values.
-Round the result to 2 decimal places.
-Question 4: Electricity Bill Calculator
+Round the result to 2 decimal places."""
+
+def simple_interest():
+    p = int(input("enter the principal amount"))
+    r = int(input("enter the rate of interest"))
+    t = int(input("enter the time in years"))
+
+    if p or r or t < 0:
+        print("invalid input")
+
+    print("Principal", p)
+
+    simp = calculate_interest(p,r,t)
+    print("Interest", simp)
+
+    total_amount = simp + p
+    print("Final Amount", total_amount)
+
+def calculate_interest(p,r,t):
+    simp = round ((p*r*t)/100, 2)
+    return simp
+    
+simple_interest()
+
+
+"""Question 4: Electricity Bill Calculator
 
 Write a Python program that takes the number of electricity units consumed.
 
@@ -235,9 +257,33 @@ Requirements:
 Use functions.
 Use conditions.
 Reject negative unit input.
-Show bill breakdown.
-Question 5: Marks Report Card
+Show bill breakdown."""
 
+def electricity_bill():
+
+    units = int(input("Enter the units of electricity used"))
+    if units <0:
+        print("INVALID INPUT")
+
+    if units<=100:
+        bill = units*5
+
+    elif units >=101 and units <= 200:
+        bill = units * 7
+
+    else :
+        bill = units * 10
+
+    total_amount = bill + 200
+
+    print("Units of electricity: ",units)
+    print("Bill for Electricity used: ",bill)
+    print("Total amount Bill + service charge: ",total_amount)
+
+electricity_bill()
+
+
+"""Question 5: Marks Report Card
 Write a Python program that takes marks for 5 subjects:
 
 Maths
@@ -247,7 +293,6 @@ Computer
 Social
 
 Store the marks in a dictionary.
-
 Calculate:
 
 Total marks
@@ -256,7 +301,6 @@ Grade
 Pass/Fail result
 
 Grade rules:
-
 90 and above = A
 75 to 89 = B
 60 to 74 = C
@@ -268,11 +312,15 @@ Requirements:
 Use a dictionary.
 Use a loop to take marks input.
 Use a function to calculate grade.
-If any subject mark is below 40, final result should be Fail.
+If any subject mark is below 40, final result should be Fail."""
+
+
+"""
+
+
+
 Question 6: Number Analyzer
-
 Write a Python program that takes one number as input.
-
 Check and display whether the number is:
 
 Positive, negative, or zero

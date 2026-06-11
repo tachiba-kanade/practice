@@ -178,29 +178,120 @@ from matplotlib.pylab import f
 # m1.show_menu()
 
 
-def min_calc():
+# def min_calc():
 
-    user_input = int(input("Enter the minutues to be converted: "))
+#     user_input = int(input("Enter the minutues to be converted: "))
     
-    if user_input < 0:
-        print("try again, wrong input")
+#     if user_input < 0:
+#         print("try again, wrong input")
     
-    hours = 0
-    mins = 0
-    day = 0
+#     hours = 0
+#     mins = 0
+#     day = 0
 
+#     if user_input > 1440:
+#         day = user_input // 1440
+#         hours = (user_input % 1440)//60
+#         mins = hours % 60 
 
-    if user_input > 1440:
-        day = user_input // 1440
-        hours = (user_input % 1440)//60
-        mins = hours % 60 
+#     total_seconds = user_input * 60
 
+#     print("days:", day)
+#     print("hours:", hours)
+#     print("mins", mins)
+#     print("total seconds", total_seconds)
 
-    total_seconds = user_input * 60
+# min_calc()
 
-    print("days:", day)
-    print("hours:", hours)
-    print("mins", mins)
-    print("total seconds", total_seconds)
+#-----------------------------------------------------
 
-min_calc()
+# def simple_interest():
+#     p = int(input("enter the principal amount: "))
+#     r = int(input("enter the rate of interest: "))
+#     t = int(input("enter the time in years: "))
+
+#     if p or r or t < 0:
+#         print("invalid input")
+
+#     print("Principal: ", p)
+
+#     simp = calculate_interest(p,r,t)
+#     print("Interest: ", simp)
+
+#     total_amount = simp + p
+#     print("Final Amount: ", total_amount)
+
+# def calculate_interest(p,r,t):
+#     simp = round ((p*r*t)/100, 2)
+#     return simp
+    
+# simple_interest()
+
+#-----------------------------------------------------
+
+# def electricity_bill():
+
+#     units = int(input("Enter the units of electricity used: "))
+#     if units <0:
+#         print("INVALID INPUT")
+
+#     if units<=100:
+#         bill = units*5
+
+#     elif units >=101 and units <= 200:
+#         bill = units * 7
+
+#     else :
+#         bill = units * 10
+
+#     total_amount = bill + 200
+
+#     print("Units of electricity: ",units)
+#     print("Bill for Electricity used: ",bill)
+#     print("Total amount Bill + service charge: ",total_amount)
+
+# electricity_bill()
+
+#------------------------------------------------------------------
+
+"""Question 5: Marks Report Card
+Write a Python program that takes marks for 5 subjects:
+
+Maths
+Science
+English
+Computer
+Social
+
+Store the marks in a dictionary.
+Calculate:
+
+Total marks
+Average marks
+Grade
+Pass/Fail result
+
+Grade rules:
+90 and above = A
+75 to 89 = B
+60 to 74 = C
+40 to 59 = D
+Below 40 = Fail
+
+Requirements:
+
+Use a dictionary.
+Use a loop to take marks input.
+Use a function to calculate grade.
+If any subject mark is below 40, final result should be Fail."""
+
+def report_card():
+    
+    print("Enter the marks for the 5 subjects")
+    for i in range(5):
+        print("Enter the marks")
+        i=+1
+        
+
+    
+
