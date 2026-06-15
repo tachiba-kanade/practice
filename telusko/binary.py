@@ -23,9 +23,19 @@ def binary_search(list, n):
 
     lower_bound, upper_bound = 0, len(list)-1
 
-    mid 
+    while(lower_bound<=upper_bound):
 
-   
+        mid = (lower_bound + upper_bound ) //2
+        if list[mid] == n:
+            globals()['pos'] = list[n]
+            return True
+        else:
+            if list[mid]<n :
+                mid = lower_bound+1
+            else:
+                mid = upper_bound-1
+
+    return False
 
 list = [3,5,6,7,8,9,19,29,45,78,89,90,98,101,1000,1234]
 n= 101

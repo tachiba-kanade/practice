@@ -141,7 +141,7 @@ def cal_dob():
     diff_hour = hours - dob_hour
     if diff_hour < 0:
         diff_hour += 24
-        curr_day -= 1
+        current_day -= 1
     print(f"current_age is: {diff_day}/{diff_month}/{diff_year},{diff_hour},{diff_min},{diff_sec},{diff_milli}")
 
 
