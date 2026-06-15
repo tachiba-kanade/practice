@@ -49,6 +49,7 @@ Display the result.
 """
 
 from datetime import *
+from xml.dom import minicompat
 
 def leap(year):
     return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
@@ -95,8 +96,55 @@ def cal_dob():
 
     print(f"current_age is: {diff_day}/{diff_month}/{diff_year}")
 
+    user_input = input("NOW do you want in details like down to hours, seconds and mili seconds (yes or no):" ).lower()
+
+    if user_input == "yes":
+        print("Continuing the program...")
+    elif user_input == "no":
+        print("Exiting the program.")
+    else:
+        print("Invalid response. Please enter yes or no.")
     
+    details = input( "Enter the details of birth in hours(0-23), mins(0-59), second(0-59) and milliseconds ")
+    dob_hour = int(details[0])
+    dob_min = int(details[1])
+    dob_second = int(details[2])
+    dob_milli = int(details[3])
+
+
+    # Extract units
+    hours = now.hour
+    minutes = now.minute
+    seconds = now.second
+    # Python tracks microseconds (1/1,000,000), so divide by 1000 for milliseconds for datetime
+    milliseconds = now.microsecond // 1000
     
+    # Milliseconds
+    diff_milli = milliseconds - dob_milli
+    if diff_milli < 0:
+        diff_milli += 1000
+        milliseconds -= 1
+
+    # Seconds
+    diff_sec = seconds - dob_second
+    if diff_sec < 0:
+        diff_sec += 60
+        miniutes -= 1
+
+    # Minutes
+    diff_min = minutes - dob_min
+    if diff_min < 0:
+        diff_min += 60
+        hours -= 1
+
+    # Hours
+    diff_hour = hours - dob_hour
+    if diff_hour < 0:
+        diff_hour += 24
+        curr_day -= 1
+    print(f"current_age is: {diff_day}/{diff_month}/{diff_year},{diff_hour},{diff_min},{diff_sec},{diff_milli}")
+
+
 
 cal_dob()
 
