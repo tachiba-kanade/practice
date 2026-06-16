@@ -42,7 +42,6 @@ def cal_dob():
 
     diff_year = current_year - dob_year 
 
-
     print(f"YOU ARE  {diff_year} YEARS {diff_month} MONTHS  {diff_day} DAYS OLD  ")
 
     user_input = input("NOW do you want in details like down to hours, seconds and mili seconds (yes or no):" ).lower()
@@ -89,7 +88,9 @@ def cal_dob():
     if diff_hour < 0:
         diff_hour += 24
         current_day -= 1
+    
     print(f"YOU ARE {diff_year} YEARS {diff_month} MONTHS {diff_day} DAYS {diff_hour} HOURS {diff_min} MINUTES {diff_sec} SECONDS {diff_milli} MILLISECONDS OLD")
+
 
 
 
