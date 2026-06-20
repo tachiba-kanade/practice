@@ -1,0 +1,32 @@
+# Python virtual environments
+.env/
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Local app data
+movies.json
+*.sqlite3
+*.db
+
+# OS / editor junk
+.DS_Store
+.vscode/
+.idea/
+
+prac_mov/.env/
