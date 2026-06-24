@@ -24,8 +24,8 @@ class A:
 
 """ But what if we want B to call init of BOTH A and B , keyword super is used"""
 
-class B:
- 
+class B():
+
     def __init__(self): 
         # when you call the object of Subclass it will call init of Subclass first
         # if you have call Super then it will call init of Superclass first and then call the init of Subclass
@@ -44,7 +44,6 @@ class B:
         print("FEATURE 4 WORKING")
 
 class C(A,B):
-
     def __init__(self):
         super().__init__() # MRO ORDER GOES FROM LEFT TO RIGHT ONCE IT SEARCHES For INIT IN C so it will show A as A is at left.
         print("In C init")
@@ -52,7 +51,6 @@ class C(A,B):
     def feat(self):
         super().feature2()
         
-
 # a1 = A()
 # b1 = B() # the object of B will still call
 #if you create an obj of B (Sub class) first it will try to find the init in B if not then it inherits A' init (Super class)
