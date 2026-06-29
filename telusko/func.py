@@ -83,6 +83,38 @@ update(lst) # when we pass the list lst to the function update, we are passing t
 # 4377187648
 # [1, 7, 3]
 
+
+"""
+Lists are passed by reference.
+
+Integers, Strings are passed by value.
+
+This is a simplification and is not how Python works.
+
+The more accurate statement is:
+
+Python passes object references to functions (sometimes called pass-by-object-reference or pass-by-sharing).
+If the object is mutable (list, dictionary, set), modifying the object affects everyone referencing it.
+If the object is immutable (int, float, string, tuple), you cannot modify the object. Any "change" creates a new object, so the caller sees no change.
+
+Argument passed
+        │
+        ▼
+Function parameter gets a reference
+        │
+        ▼
+Can the object itself be modified?
+
+YES (list, dict, set)
+    ↓
+Original object changes
+
+NO (int, float, str, tuple)
+    ↓
+A new object is created instead
+
+"""
+
 """ TYPES OF ARGUMENTS : formal and actual
 under actual there are 4 types of arguments :
     Positional arguments
