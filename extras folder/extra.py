@@ -66,8 +66,6 @@ that means there is a weak positive relationship.
 """
 
 print(f"Correlation between true and self rating: {r:.2f}")
-
-
 """
 self = [6.2, 4.8, 7.1, 5.0, 6.9] all which are greater than 5
 [True, False, True, False, True]
@@ -89,3 +87,56 @@ print(f"{per*100:.0f}think they're above average") # if 0.234 = 23
 #normal distribution formula  for mesuring the height of bellcurve: f(x) = 1 / (σ√(2π)) × e^(-0.5 × ((x - μ) / σ)^2)
 
 x = np.linspace(1,10,500)
+
+mean = 5
+std = 1.5
+
+# Normal distribution formula
+pdf = (1 / (std * np.sqrt(2 * np.pi))) * np.exp(
+    -0.5 * ((x - mean) / std) ** 2
+)
+
+plt.figure(figsize=(10, 6))
+
+# Draw the smooth bell curve
+plt.plot(x, pdf, linewidth=2)
+
+# -----------------------------
+# 5. Add dots under the curve
+# -----------------------------
+
+# Use fewer points for display, otherwise 100k dots is too much
+dot_x = np.random.normal(loc=5, scale=1.5, size=4000)
+dot_x = np.clip(dot_x, 1, 10)
+
+# For each dot, calculate how high the bell curve is at that x position
+dot_pdf = (1 / (std * np.sqrt(2 * np.pi))) * np.exp(
+    -0.5 * ((dot_x - mean) / std) ** 2
+)
+
+# Put each dot somewhere between y=0 and the curve height
+dot_y = np.random.uniform(0, dot_pdf)
+plt.scatter(dot_x, dot_y, s=3, alpha=0.4)
+
+# -----------------------------
+# 6. Add "YOU?" marker
+# -----------------------------
+
+you_x = 3
+you_y = 0.04
+
+plt.scatter([you_x], [you_y], s=80)
+plt.vlines(you_x, you_y, you_y + 0.07)
+plt.text(you_x - 0.45, you_y + 0.075, "YOU?", fontsize=16, fontweight="bold")
+
+# -----------------------------
+# 7. Final styling
+# -----------------------------
+
+plt.title("Human attractiveness rated 1-10")
+plt.xlabel("Attractiveness rating")
+plt.ylabel("Density")
+plt.xlim(1, 10)
+plt.ylim(0, max(pdf) * 1.15)
+
+plt.show()
