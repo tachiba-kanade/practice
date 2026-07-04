@@ -23,7 +23,7 @@ print("Server socket created")
 
 # bind socket with port number
 
-s.bind(('localhost',9999))# pass port number  ,mostl y will be different one client of server 0 - 65535
+s.bind(('localhost',9999))# pass port number ,mostly will be different one client of server 0 - 65535
 
 # now we have to start listening to the client and then connect to clients and at once how many clients you wanna connect
 # create a queue for 5 connections or 10 connections or 3 so mean 3 clients will wait for response/cnnection
@@ -37,3 +37,5 @@ while True:
     c.send(bytes("Welcome. to Telusko","utf-8")) # this cant be send in string format it has to be byte format
     c.close()
 
+#A protocol like HTTP uses a socket for only one transfer. The client sends a request, then reads a reply. 
+# That’s it. The socket is discarded. This means that a client can detect the end of the reply by receiving 0 bytes.
